@@ -5,9 +5,6 @@ entirely in the browser, on your own machine: no build step, no `npm install`,
 no framework — just Three.js for rendering and MediaPipe for hand tracking,
 both loaded from a CDN.
 
-![status](https://img.shields.io/badge/build-none-informational)
-![deps](https://img.shields.io/badge/npm%20install-not%20needed-success)
-![runtime](https://img.shields.io/badge/runtime-browser-blue)
 
 ---
 
