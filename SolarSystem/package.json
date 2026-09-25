@@ -1,0 +1,10 @@
+{
+  "name": "solar-system-hands",
+  "private": true,
+  "type": "module",
+  "comment": "No dependencies. This file exists only so node treats js/*.js as ES modules when running test/.",
+  "scripts": {
+    "start": "node serve.mjs",
+    "test": "node test/gestures.test.mjs"
+  }
+}

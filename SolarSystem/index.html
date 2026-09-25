@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solar System — Hand Controlled</title>
+<link rel="stylesheet" href="./css/style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/",
+    "tasks-vision": "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/vision_bundle.mjs"
+  }
+}
+</script>
+</head>
+
+<!-- Scene canvas lives at the bottom of the stack; everything else is HUD. -->
+<canvas id="scene"></canvas>
+
+<!-- Planet name tags, positioned every frame by main.js -->
+<div id="labels"></div>
+
+<!-- Webcam preview, bottom-left corner -->
+<div id="cam">
+  <video id="video" playsinline muted></video>
+  <canvas id="overlay"></canvas>
+  <div id="cam-status">starting camera…</div>
+  <div id="gesture-badge"></div>
+</div>
+
+<!-- Gesture cheat sheet, top-left -->
+<div id="legend">
+  <h1>Solar System</h1>
+  <p class="sub">hand controlled</p>
+  <ul>
+    <li><b>✊ Fist</b> — grab &amp; drag to orbit</li>
+    <li><b>🙌 Two palms</b> — spread apart to zoom</li>
+    <li><b>✊✊ Two fists</b> — hold to reset the view</li>
+    <li><b>☝️ Point</b> — hold on a planet to select</li>
+    <li><b>🖐️ Open palm</b> — hold to pause orbits</li>
+  </ul>
+  <p class="hint">mouse also works: drag / wheel / click &middot; <b>D</b> for gesture debug</p>
+</div>
+
+<!-- Planet readout, right side -->
+<div id="info" class="hidden">
+  <button id="info-close" aria-label="close">×</button>
+  <h2 id="info-name"></h2>
+  <div id="info-rows"></div>
+  <p id="info-fact"></p>
+</div>
+
+<!-- Time state, bottom-right -->
+<div id="clock">
+  <span id="clock-state">▶ running</span>
+  <span id="clock-speed"></span>
+</div>
+
+<!-- Classifier readout, toggled with D -->
+<div id="debug" class="hidden"></div>
+
+<!-- Fatal errors (no camera, model failed to load, …) -->
+<div id="toast" class="hidden"></div>
+
+<script type="module" src="./js/main.js"></script>
+</html>
