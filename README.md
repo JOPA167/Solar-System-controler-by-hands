@@ -242,8 +242,4 @@ starts.
 Both third-party libraries are loaded via an **import map** in `index.html`
 with **pinned versions** — keep them pinned when updating.
 
----
 
-## 📄 License
-
-Add your preferred license here (e.g. MIT) — none is currently specified.
